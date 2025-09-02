@@ -1,0 +1,72 @@
+{
+  "$id": "1",
+  "Theme": "Default theme",
+  "TimeFrame": 0,
+  "Papers": {
+    "$id": "2",
+    "$values": [
+      {
+        "$id": "3",
+        "NameOfPub": "lksjfdl",
+        "AuthorValue": {
+          "$id": "4",
+          "Name": "dsfasd",
+          "Surname": "sdkfsf",
+          "Birthday": "2004-10-10T00:00:00"
+        },
+        "DateValue": "2004-01-01T00:00:00"
+      },
+      {
+        "$id": "5",
+        "NameOfPub": "lksjfdl",
+        "AuthorValue": {
+          "$id": "6",
+          "Name": "dsfasd",
+          "Surname": "sdkfsf",
+          "Birthday": "2004-10-13T00:00:00"
+        },
+        "DateValue": "2004-01-01T00:00:00"
+      },
+      {
+        "$id": "7",
+        "NameOfPub": "fslfs",
+        "AuthorValue": {
+          "$id": "8",
+          "Name": "John",
+          "Surname": "Gru",
+          "Birthday": "2004-04-22T00:00:00"
+        },
+        "DateValue": "2010-01-01T00:00:00"
+      },
+      {
+        "$id": "9",
+        "NameOfPub": "dsf",
+        "AuthorValue": {
+          "$id": "10",
+          "Name": "Fdsf",
+          "Surname": "dsfsd",
+          "Birthday": "3422-10-12T00:00:00"
+        },
+        "DateValue": "1999-01-01T00:00:00"
+      },
+      {
+        "$id": "11",
+        "NameOfPub": "ddd",
+        "AuthorValue": {
+          "$id": "12",
+          "Name": "Dddd",
+          "Surname": "dddd",
+          "Birthday": "2000-02-10T00:00:00"
+        },
+        "DateValue": "2005-01-01T00:00:00"
+      }
+    ]
+  },
+  "Members": {
+    "$id": "13",
+    "$values": []
+  },
+  "OrgName": "MIET",
+  "RegNum": 31,
+  "Name": "MIET"
+}

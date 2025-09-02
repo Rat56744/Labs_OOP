@@ -1,0 +1,45 @@
+/mnt/WdHard/институт/Labs_OOP/иНститут/С#/Лабараторные работы/Lab5/obj/Debug/net8.0/Lab5.GeneratedMSBuildEditorConfig.editorconfig
+/mnt/WdHard/институт/Labs_OOP/иНститут/С#/Лабараторные работы/Lab5/obj/Debug/net8.0/Lab5.AssemblyInfoInputs.cache
+/mnt/WdHard/институт/Labs_OOP/иНститут/С#/Лабараторные работы/Lab5/obj/Debug/net8.0/Lab5.AssemblyInfo.cs
+/mnt/WdHard/институт/Labs_OOP/иНститут/С#/Лабараторные работы/Lab5/obj/Debug/net8.0/Lab5.csproj.CoreCompileInputs.cache
+/mnt/WdHard/институт/Labs_OOP/иНститут/С#/Лабараторные работы/Lab5/obj/Debug/net8.0/Lab5.sourcelink.json
+/mnt/WdHard/институт/Labs_OOP/иНститут/С#/Лабараторные работы/Lab5/bin/Debug/net8.0/Lab5
+/mnt/WdHard/институт/Labs_OOP/иНститут/С#/Лабараторные работы/Lab5/bin/Debug/net8.0/Lab5.deps.json
+/mnt/WdHard/институт/Labs_OOP/иНститут/С#/Лабараторные работы/Lab5/bin/Debug/net8.0/Lab5.runtimeconfig.json
+/mnt/WdHard/институт/Labs_OOP/иНститут/С#/Лабараторные работы/Lab5/bin/Debug/net8.0/Lab5.dll
+/mnt/WdHard/институт/Labs_OOP/иНститут/С#/Лабараторные работы/Lab5/bin/Debug/net8.0/Lab5.pdb
+/mnt/WdHard/институт/Labs_OOP/иНститут/С#/Лабараторные работы/Lab5/obj/Debug/net8.0/Lab5.dll
+/mnt/WdHard/институт/Labs_OOP/иНститут/С#/Лабараторные работы/Lab5/obj/Debug/net8.0/refint/Lab5.dll
+/mnt/WdHard/институт/Labs_OOP/иНститут/С#/Лабараторные работы/Lab5/obj/Debug/net8.0/Lab5.pdb
+/mnt/WdHard/институт/Labs_OOP/иНститут/С#/Лабараторные работы/Lab5/obj/Debug/net8.0/Lab5.genruntimeconfig.cache
+/mnt/WdHard/институт/Labs_OOP/иНститут/С#/Лабараторные работы/Lab5/obj/Debug/net8.0/ref/Lab5.dll
+/workspaces/Labs_OOP/иНститут/C#/Labs/Lab5/bin/Debug/net8.0/Lab5
+/workspaces/Labs_OOP/иНститут/C#/Labs/Lab5/bin/Debug/net8.0/Lab5.deps.json
+/workspaces/Labs_OOP/иНститут/C#/Labs/Lab5/bin/Debug/net8.0/Lab5.runtimeconfig.json
+/workspaces/Labs_OOP/иНститут/C#/Labs/Lab5/bin/Debug/net8.0/Lab5.dll
+/workspaces/Labs_OOP/иНститут/C#/Labs/Lab5/bin/Debug/net8.0/Lab5.pdb
+/workspaces/Labs_OOP/иНститут/C#/Labs/Lab5/obj/Debug/net8.0/Lab5.GeneratedMSBuildEditorConfig.editorconfig
+/workspaces/Labs_OOP/иНститут/C#/Labs/Lab5/obj/Debug/net8.0/Lab5.AssemblyInfoInputs.cache
+/workspaces/Labs_OOP/иНститут/C#/Labs/Lab5/obj/Debug/net8.0/Lab5.AssemblyInfo.cs
+/workspaces/Labs_OOP/иНститут/C#/Labs/Lab5/obj/Debug/net8.0/Lab5.csproj.CoreCompileInputs.cache
+/workspaces/Labs_OOP/иНститут/C#/Labs/Lab5/obj/Debug/net8.0/Lab5.sourcelink.json
+/workspaces/Labs_OOP/иНститут/C#/Labs/Lab5/obj/Debug/net8.0/Lab5.dll
+/workspaces/Labs_OOP/иНститут/C#/Labs/Lab5/obj/Debug/net8.0/refint/Lab5.dll
+/workspaces/Labs_OOP/иНститут/C#/Labs/Lab5/obj/Debug/net8.0/Lab5.pdb
+/workspaces/Labs_OOP/иНститут/C#/Labs/Lab5/obj/Debug/net8.0/Lab5.genruntimeconfig.cache
+/workspaces/Labs_OOP/иНститут/C#/Labs/Lab5/obj/Debug/net8.0/ref/Lab5.dll
+/home/rat56744/Labs_OOP/иНститут/C#/Labs/Lab5/bin/Debug/net8.0/Lab5
+/home/rat56744/Labs_OOP/иНститут/C#/Labs/Lab5/bin/Debug/net8.0/Lab5.deps.json
+/home/rat56744/Labs_OOP/иНститут/C#/Labs/Lab5/bin/Debug/net8.0/Lab5.runtimeconfig.json
+/home/rat56744/Labs_OOP/иНститут/C#/Labs/Lab5/bin/Debug/net8.0/Lab5.dll
+/home/rat56744/Labs_OOP/иНститут/C#/Labs/Lab5/bin/Debug/net8.0/Lab5.pdb
+/home/rat56744/Labs_OOP/иНститут/C#/Labs/Lab5/obj/Debug/net8.0/Lab5.GeneratedMSBuildEditorConfig.editorconfig
+/home/rat56744/Labs_OOP/иНститут/C#/Labs/Lab5/obj/Debug/net8.0/Lab5.AssemblyInfoInputs.cache
+/home/rat56744/Labs_OOP/иНститут/C#/Labs/Lab5/obj/Debug/net8.0/Lab5.AssemblyInfo.cs
+/home/rat56744/Labs_OOP/иНститут/C#/Labs/Lab5/obj/Debug/net8.0/Lab5.csproj.CoreCompileInputs.cache
+/home/rat56744/Labs_OOP/иНститут/C#/Labs/Lab5/obj/Debug/net8.0/Lab5.sourcelink.json
+/home/rat56744/Labs_OOP/иНститут/C#/Labs/Lab5/obj/Debug/net8.0/Lab5.dll
+/home/rat56744/Labs_OOP/иНститут/C#/Labs/Lab5/obj/Debug/net8.0/refint/Lab5.dll
+/home/rat56744/Labs_OOP/иНститут/C#/Labs/Lab5/obj/Debug/net8.0/Lab5.pdb
+/home/rat56744/Labs_OOP/иНститут/C#/Labs/Lab5/obj/Debug/net8.0/Lab5.genruntimeconfig.cache
+/home/rat56744/Labs_OOP/иНститут/C#/Labs/Lab5/obj/Debug/net8.0/ref/Lab5.dll

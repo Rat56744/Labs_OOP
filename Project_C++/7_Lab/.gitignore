@@ -1,0 +1,7 @@
+build
+*.exe
+*.out
+*.binв
+*.o
+*.obj
+main

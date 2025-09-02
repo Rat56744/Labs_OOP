@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="1092.735mm"
+   height="162.79132mm"
+   viewBox="0 0 1092.735 162.79132"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   sodipodi:docname="2880px-Commutative_diagram_illustrating_problem_solving_via_the_Fourier_transform.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="true"
+     inkscape:zoom="4.243196"
+     inkscape:cx="1129.9266"
+     inkscape:cy="118.77839"
+     inkscape:window-width="1920"
+     inkscape:window-height="1046"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid53345"
+       originx="119.03066"
+       originy="2.6871204" />
+  </sodipodi:namedview>
+  <defs
+     id="defs2">
+    <marker
+       style="overflow:visible"
+       id="Arrow1Lstart"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lstart"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(0.8,0,0,0.8,10,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path53349" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Lend"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path53352" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Lend-9"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path53352-4" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Lend-3"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path53352-1" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Lend-2"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path53352-5" />
+    </marker>
+  </defs>
+  <g
+     inkscape:label="Слой 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(384.33469,-13.042849)">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:25.4px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none"
+       x="-214.15797"
+       y="39.01025"
+       id="text1982"><tspan
+         sodipodi:role="line"
+         id="tspan1980"
+         style="font-size:25.4px;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none"
+         x="-214.15797"
+         y="39.01025" /></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.998273;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Lend)"
+       d="M -110.52278,42.188297 H 298.25845"
+       id="path53347" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.00354;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow1Lstart)"
+       d="M -111.84572,163.89663 H 300.90429"
+       id="path53347-2" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.865;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:2.595, 2.595;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Arrow1Lend)"
+       d="M -244.13736,68.646636 V 142.72998"
+       id="path53774" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.865;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Arrow1Lend-3)"
+       d="M 496.69597,66.000778 V 140.08414"
+       id="path53774-5" />
+    <text
+       xml:space="preserve"
+       style="font-size:21.1667px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       x="-11.304053"
+       y="26.313297"
+       id="text23845"><tspan
+         sodipodi:role="line"
+         id="tspan23843"
+         style="font-size:21.1667px;stroke-width:0.264583"
+         x="-11.304053"
+         y="26.313297" /></text>
+    <text
+       xml:space="preserve"
+       style="font-size:25.4px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       x="-95.970718"
+       y="148.02162"
+       id="text62267"><tspan
+         sodipodi:role="line"
+         id="tspan62265"
+         style="stroke-width:0.264583"
+         x="-95.970718"
+         y="148.02162" /></text>
+    <text
+       xml:space="preserve"
+       style="font-size:24.6944px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       x="-41.360577"
+       y="31.913326"
+       id="text3386"><tspan
+         sodipodi:role="line"
+         id="tspan3384"
+         style="font-size:24.6944px;stroke-width:0.264583"
+         x="-41.360577"
+         y="31.913326">преобразование Фурье</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:24.6944px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       x="-386.51715"
+       y="47.940239"
+       id="text4668"><tspan
+         sodipodi:role="line"
+         id="tspan4666"
+         style="font-size:24.6944px;stroke-width:0.264583"
+         x="-386.51715"
+         y="47.940239">(исходное выражение)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:24.6944px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       x="309.45547"
+       y="48.888542"
+       id="text6070"><tspan
+         sodipodi:role="line"
+         id="tspan6068"
+         style="font-size:24.6944px;stroke-width:0.264583"
+         x="309.45547"
+         y="48.888542">(преобразованное выражение)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:24.6944px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       x="322.98816"
+       y="170.57826"
+       id="text7922"><tspan
+         sodipodi:role="line"
+         id="tspan7920"
+         style="font-size:24.6944px;stroke-width:0.264583"
+         x="322.98816"
+         y="170.57826">(преобразованное решение)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:24.6944px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       x="-372.2377"
+       y="170.86635"
+       id="text12180"><tspan
+         sodipodi:role="line"
+         id="tspan12178"
+         style="font-size:24.6944px;stroke-width:0.264583"
+         x="-372.2377"
+         y="170.86635">(конечное решение)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:24.6944px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       x="-86.921822"
+       y="154.54327"
+       id="text15376"><tspan
+         sodipodi:role="line"
+         id="tspan15374"
+         style="font-size:24.6944px;stroke-width:0.264583"
+         x="-86.921822"
+         y="154.54327">обратное преобразование Фурье</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:21.1667px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       x="-342.90152"
+       y="113.74163"
+       id="text21428"><tspan
+         sodipodi:role="line"
+         id="tspan21426"
+         style="stroke-width:0.264583"
+         x="-342.90152"
+         y="113.74163">решение</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:21.1667px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       x="-233.95535"
+       y="113.85836"
+       id="text27886"><tspan
+         sodipodi:role="line"
+         id="tspan27884"
+         style="stroke-width:0.264583"
+         x="-233.95535"
+         y="113.85836">(сложное)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:21.1667px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       x="397.93182"
+       y="113.74162"
+       id="text21428-6"><tspan
+         sodipodi:role="line"
+         id="tspan21426-1"
+         style="stroke-width:0.264583"
+         x="397.93182"
+         y="113.74162">решение</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:21.1667px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       x="506.87802"
+       y="113.85835"
+       id="text27886-6"><tspan
+         sodipodi:role="line"
+         id="tspan27884-8"
+         style="stroke-width:0.264583"
+         x="506.87802"
+         y="113.85835">(легкое)</tspan></text>
+  </g>
+</svg>

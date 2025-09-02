@@ -1,0 +1,7 @@
+6,10,10,10,10,
+a,b,10,September,2000,c,1
+e,f,11,December,2001,g,2
+h,i,12,May,2002,j,3
+k,l,25,June,1999,c,1
+n,o,9,February,2004,g,2
+asdf,etew,30,May,2050,IKT,94

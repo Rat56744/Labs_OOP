@@ -1,0 +1,1392 @@
+Моё задание:
+
+Из программы, реализованной в Л.Р.№3 скомпонуйте базу данных в стиле STL: Студент. Для хранения и обработки данных использовать контейнер vector
+Класс fio имеет три поля типа «строка» (фамилия, имя, отчество)
+Класс student имеет следующие элементы:
+Элементы-данные  класса(все данные pri):
+    Студент: вложенный объект класса man
+    Факультет: строка текста
+Номер группы: целое число
+Элементы-функции класса
+1. Создать обязательные функции, указанные в общих требованиях.
+2. Создать функции для данного варианта с использованием STL:
+    • Добавить новый элемент в массив
+    • Удалить элемент из массива
+    • Поиск  студента по man
+    • Поиск  студентов по номеру группы
+    • сортировка по фамилии
+Перегрузить следующие операторы:
+    <<  вывод объекта класса student в выходной поток cout (на терминал)
+    == сравнение объекта типа student с объектом класса man
+Тестовая программа (функция main):
+    1. При запуске программы данные ввести с клавиатуры (первый запуск программы) или загрузить с диска (все последующие запуски)
+    2. При реализации действий использовать перегруженные операторы
+    3. Выполнить все реализованные действия (добавление, удаление, поиск, сортировка)
+    4. При выходе из программы запомнить измененную базу на диске
+
+Текущий проект:
+
+main.cpp
+
+#include "stdfax.h"
+#include "people.h"
+#include "Error.h"
+#include "exceptions.h"
+#include "function.h"
+
+int main()
+{
+    try{
+        const string student_file = "file.txt";
+
+        vector<shared_ptr<common>> people;
+        vector<student> RStud; // Массив из прошлой лабараторной работы для студентов заданной группы
+        
+        // Контейнер для хранения direction и соответствующих им grup
+        unordered_map<string, vector<int>> grupsMap;
+
+        // Массив максимумов для студентов где 0 - Имя, 1 - Фамилия, 2 - Группа, 3 - Номер группы
+        vector<int> max_stud(4,10);
+        // Массив максимумов для преподавателей где 0 - Имя, 1 - Фамилия, 2 - Отчество, 3 - Кафедра, 4 - Учебный курс
+        vector<int> max_prep{10, 10, 10, 10, 17};
+
+        //  Массив различных номеров групп
+        vector<int> numbers_grup;
+
+        // Массив уникальных групп
+        vector<string> directions;
+
+        cout << "\tКатегорически вас приветствую!\nЭтот проект представляет из себя базу данных из студентов и преподавателей\n";
+        cout << "В каждое строковое поле(по смыслу из букв), к примеру имя, могут вводиться только буквы(заглавные и строчные) и числа\n";
+        cout << "Если попробовать ввести какие-либо другие символы, то будет выведено сообщение об ошибке и поле придется ввести снова\n";
+        cout << "В каждое цифровое поле(номер... или academical_course), в которое просят ввести именно число, можно ввести только цифры. В противном случае\n";
+        cout << "появится сообщение об ошибке и поле придется ввести снова\n";
+        cout << "Данные, которые вводятся в базу данных должны быть введени строго на английском языке.\n\n";
+
+        ifstream file;  // Объект на чтение
+        try{
+            file.open("file.txt", std::ios::out);
+            if(!file.is_open())
+            {
+                throw Error("Файл не открылся!");
+            }}
+        catch(const Error& e){
+            cout << "Ошибка: "<< e.what()<<'\n';
+            return 1;}
+
+        std::streampos fsize = file.tellg();  //  Запоминаем адрес куда указывает курсор
+        file.seekg( 0, std::ios::end );  //  Перемещаем курсор в конец файла
+        fsize = file.tellg() - fsize;  //  Запоминаем размер файла
+        file.seekg(std::ios::beg); // Перемещаем курсор в начало файла, чтобы  в дальнейшем мы могли прочитать данные из него
+
+        if(fsize==0){
+            // Вводим с клавиатуры количество объектов
+            cout << "Введите количество людей(не менее 8):";
+            int col_people;
+            cin_col_people(col_people);
+
+            for(int i = 0; i < col_people; ++i)
+            {
+                add_people(people, grupsMap, numbers_grup, directions, max_stud, max_prep);
+            }
+        }
+        else{
+            read_of_file(file,people,grupsMap,numbers_grup,directions,max_stud,max_prep); // Реализовать функцию
+        }
+
+
+        //////////////////////////////////////////////////////////////////////////////
+
+        int a;
+        do{
+            cout <<"\n\n";
+            baze_data(people, max_stud, max_prep);// Вывод всей информации в файле
+            dialog_func(); // Диалоговая функция
+            cin_int(a,1,6);
+            switch (a)
+            {
+            case 1:
+                    cout << "Первая функция\n";
+                    add_people(people, grupsMap, numbers_grup, directions, max_stud, max_prep);
+                    break;
+
+            case 2:
+                    cout << "Вторая функция\n";
+                    find_stud_to_grup(people,RStud,grupsMap,numbers_grup,max_stud);
+                    break;
+
+            case 3:
+                    cout << "Третья функция\n";
+                    find_stud_num_grup(people,numbers_grup,max_stud);
+                    break;
+
+            case 4:
+                    cout << "Четвертая функция\n";
+                    sort_fam(people);
+                    break;
+            
+            case 5: 
+                    find_people(people,max_stud, max_prep);
+                    break;
+
+            case 6: // Выход из программы
+                    // Сохранить все изменения на диске
+                    break;
+
+            default:
+                    cout << "Ой! Что-то пошло не так! Попробуйте еще раз ввести число.\n";
+                    break;
+            }
+        }while( a != 6);
+
+        write_file(people, max_stud, max_prep); // Функция записи в фаил нашей базы данных
+        
+        cout << "Нажмите Enter для продолжения...\n";
+        cin.get();
+    }
+    catch(std::exception& e)
+    {cout << "Что-то пошло не так(\n";
+    return 1;}
+}
+
+fio.cpp
+
+#include "stdfax.h"
+#include "exceptions.h"
+#include "man.h"
+#include <iomanip>
+#include "fio.h"
+using std::setw, std::vector, std::cout, std::string, std::cin;
+
+void fio::display(vector<int>& max_prep) const
+{
+    cout <<setw(max_prep[0]+3)<<name<<setw(max_prep[1]+3)<<surname<<setw(max_prep[2]+3)<<patronymic;
+}
+
+fio::fio(vector<int>& max_prep): man(max_prep)
+{
+    cout << "patronomic: ";
+    set_param(patronymic,cin);
+    if(patronymic.size() > max_prep[2]){max_prep[2] = patronymic.size();}
+}
+
+fio& fio::operator=(const fio& other)
+{
+    patronymic = other.patronymic;
+    return *this;
+}
+
+std::ostream& operator<<(std::ostream& stream, const fio& teach)
+{
+    stream << teach.patronymic;
+    return stream;
+}
+
+fio::fio(vector<string>& tokens):man(tokens), patronymic(tokens[3]){}
+
+fio::fio()
+{
+    patronymic = "undefinded patronymic";
+}
+
+man.cpp
+
+#include "stdfax.h"
+#include "exceptions.h"
+#include "man.h"
+using std::setw, std::vector, std::cout,std::cin, std::string, std::numeric_limits;
+using std::streamsize;
+
+void man::display(vector<int>& max) const
+{
+    cout << setw(max[0]+5)<<name<<setw(max[1]+5)<<surname;
+}
+
+man::man(vector<int>& max)
+{
+    cout << "name: ";
+    set_param(name,cin);
+    if(name.size() > max[0]){max[0] = name.size();}
+    
+    cout << "surname: ";
+    set_param(surname,cin);
+    if(surname.size() > max[1]){max[1] = surname.size();}
+}
+
+std::ostream& operator<<(std::ostream& stream, const man& Man)
+{
+    stream << Man.name;
+    stream << Man.surname;
+    return stream;
+}
+
+man& man::operator=(const man& other)
+{
+    name = other.name;
+    surname = other.surname;
+    return *this;
+}
+
+
+man::man(){
+    name = "undefinded name";
+    surname = "undefinded surname";}
+
+student.cpp
+
+#include "student.h"
+#include "stdfax.h"
+#include "exceptions.h"
+
+using std::setw, std::vector, std::cout, std::string, std::numeric_limits, std::endl;
+using std::unordered_map,std::cin, std::to_string, std::istream, std::streamsize;
+
+int student::count = 0;
+
+void student::display(vector<int>& max_stud) const
+{
+    Man.display(max_stud);
+    cout<<setw(max_stud[2]+5)<<direction<<setw(max_stud[3]+5)<<grup<<'\n';
+}
+
+
+
+student::student(unordered_map<string, vector<int>>& grupsMap, vector<int>& numbers_grup, vector<string>& directions, vector<int>& max_stud):Man(max_stud)
+{
+    // Direction
+    cout << "Direction: ";
+    set_param(direction, cin); // Считываем с помощью getline заранее очистив входной поток
+
+    if(direction.size() > max_stud[2]){max_stud[2] = direction.size();}
+
+    int num = 0;
+    if(directions.size() == 0){directions.push_back(direction);}
+    else
+    {for (int i=0; i < directions.size(); ++i)
+        {
+            if (directions[i] == direction){++num;}
+        }
+        if (num == 0){directions.push_back(direction);}}
+
+    // Grup
+    cout << "grup(целое число): ";
+    read_int(grup, cin);
+    if((to_string(grup)).size() > max_stud[3]){max_stud[3] = (to_string(grup)).size();}
+    num = 0;
+    if(numbers_grup.size() == 0){numbers_grup.push_back(grup);}
+    else{
+        for(int i = 0; i < numbers_grup.size();++i)
+        {if(numbers_grup[i] == grup){++num;}}
+        if(num == 0){numbers_grup.push_back(grup);}}
+    ++count;
+
+    // Unordered_map
+    num = 0;
+    auto it = grupsMap.find(direction);
+    if (it != grupsMap.end()) {
+        for (int grup_in_map : it->second) {
+            if(grup_in_map == grup)
+            {++num;}
+        }
+        if(num == 0){grupsMap[direction].push_back(grup);}
+    } else {grupsMap[direction].push_back(grup);}
+}
+
+student::student(unordered_map<string, vector<int>>& grupsMap, vector<string>& tokens, vector <int>& numbers_grup, vector<string>& directions): Man(tokens), direction(tokens[3]), grup(std::stoi(tokens[4]))
+{   
+    // Direction
+    int num = 0;
+    if(directions.size() == 0){directions.push_back(direction);}
+    else
+    {
+        for (int i=0; i < directions.size(); ++i)
+        {
+            if (directions[i] == direction){++num;}
+        }
+        if (num == 0){directions.push_back(direction);}
+    }
+
+    // Grup
+    num = 0;
+    if(numbers_grup.size() == 0){numbers_grup.push_back(grup);}
+    else{
+        for(int i = 0; i < numbers_grup.size();++i)
+        {
+            if(numbers_grup[i] == grup)
+            {++num;}
+        }
+        if(num == 0){numbers_grup.push_back(grup);}}
+    
+    // Unordered_map
+    ++count;
+    num = 0;
+    auto it = grupsMap.find(direction);
+    if (it != grupsMap.end()) {
+        for (int grup_in_map : it->second) {
+            if(grup_in_map == grup)
+            {++num;}
+        }
+        if(num == 0){grupsMap[direction].push_back(grup);}
+    } else {grupsMap[direction].push_back(grup);}
+}
+
+student::student(const student& stud)
+{
+    cout << "Конструктор копирования\n";
+    Man = stud.Man;
+    direction = stud.direction;
+    grup = stud.grup;
+    ++count;
+}
+
+std::ostream& operator<<(std::ostream& stream, const student& stud){
+    stream << stud.Man;
+    stream << stud.direction;
+    stream << stud.grup << '\n';
+    return stream;
+}
+
+student& student::operator=(const student& other)
+{
+    // cout << "Перегруженный оператор присваивания.\n";
+    Man = other.Man;
+    direction = other.direction;
+    grup = other.grup;
+    return *this;
+}
+
+student::student():Man()
+{
+    direction = "undefinded direction";
+    grup =-1;
+    ++count;
+}
+
+teacher.cpp
+
+#include "stdfax.h"
+#include "common.h"
+#include "exceptions.h"
+#include <iomanip>
+#include "teacher.h"
+#include "Error.h"
+
+using std::setw, std::vector, std::cout, std::string, std::cin;
+
+string enum_to_string(Department dep)
+{
+    switch (dep) // Хитрейшим способом преобразуем наше поле в строчку для понятного вывода
+       {case VM_1: return "VM_1";
+        case IB: return "IB";
+        case MIUP: return "MIUP";
+        case TKS: return "TKS";
+        case AMF: return "AMF";
+        default: return "Unknown";}}
+
+void teacher::initialization_enum(vector<int>& max_prep)
+{
+    int input;
+    bool cin_complete = false;
+    cout << "Вводим Department (0=VM_1, 1=IB, 2=MIUP, 3=TKS, 4=AMF): ";
+    while(true){
+        string buff;
+        try{
+            getline(cin, buff);
+            input = stoi(buff);
+            if (input < 0 || input > 4) {
+                throw Error("Число не в диапазоне от 0 до 4");
+            }}
+        catch (const std::invalid_argument&) {
+            cout << "Ошибка: введено не число\n";
+            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        }
+        catch (const std::out_of_range&) {
+            cout << "Ошибка: число выходит за пределы int\n";
+            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        }
+        catch(Error& e){
+            cout << "Ошибка: "<< e.what()<<'\n';
+            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');}
+    }
+}
+
+void teacher::display(vector<int>& max_prep) const
+{
+    prep.display(max_prep);
+    cout<<setw(max_prep[3]+3)<<enum_to_string(department)<<setw(max_prep[4]+3)<<academical_course<<'\n';
+}
+
+teacher::teacher(vector<int>& max_prep): prep(max_prep)
+{
+    cout<< "Department: ";
+    initialization_enum(max_prep);
+    cout<<"\n"<< "Academical_course: ";
+    set_param(academical_course,cin);
+}
+
+std::ostream& operator<<(std::ostream& stream, const teacher& teach)
+{
+    stream << teach.prep;
+    stream << enum_to_string(teach.department)<< teach.academical_course<<'\n';
+    return stream;
+}
+
+
+teacher& teacher::operator=(const teacher& other)
+{
+    department = other.department;
+    academical_course = other.academical_course;
+    return *this;
+}
+
+
+teacher::teacher(vector<string>& tokens):prep(tokens), department(static_cast<Department>(stoi(tokens[4])))/*Преобразование считанного числа в enum*/
+, academical_course(tokens[5]){
+    //cout << "Конструктор преподавателя\n";
+    }
+
+int teacher::get_department(){return static_cast<int>(department);}
+string teacher::get_department_string(){return enum_to_string(department);}
+
+string teacher::get_academical_course(){return academical_course;}
+
+baze_data.cpp
+
+#include <iostream>
+#include <vector>
+#include <iomanip>
+#include <memory>
+#include <iomanip>
+#include "people.h"
+using std::left, std::setfill;
+
+void baze_data(vector<std::shared_ptr<common>>& people, vector<int>& max_stud, vector<int>& max_prep)
+{
+    cout << "\t\t\t\tБаза данных\n";
+    cout <<setfill('*')<<setw(max_prep[0]+max_prep[1]+max_prep[2]+max_prep[3]+max_prep[4]+15)<<'*'<<setfill(' ')<<'\n';
+    // Вывод преподавателей
+    cout<<"\n\nПреподаватели:\n";
+    cout<<setw(max_prep[0]+3)<<left<<"Name";
+    cout<<setw(max_prep[1]+3)<<left<<"Surname";
+    cout<<setw(max_prep[2]+3)<<left<<"Partonymic";
+    cout<<setw(max_prep[3]+3)<<left<<"Department";
+    cout<<setw(max_prep[4]+3)<<left<<"Academical course"<<'\n';
+    cout<<setfill('-')<<setw(max_prep[0]+max_prep[1]+max_prep[2]+max_prep[3]+max_prep[4]+15)<<'-'<<setfill(' ')<<'\n';
+    int col_prep = 0; // Счетчик преподавателей
+    for(int i = 0; i < people.size(); ++i)
+    {
+        if(auto teach = dynamic_cast<teacher*>(people[i].get())){
+            ++col_prep;
+            teach->display(max_prep);} // Проходимся по массиву и выводим только преподавателей
+    }
+    cout <<setfill('-')<<setw(max_prep[0]+max_prep[1]+max_prep[2]+max_prep[3]+max_prep[4]+15)<<'-'<<setfill(' ')<<'\n';
+    cout << "Количество преподавателей: " << col_prep << "\n\n\n";
+
+    // Вывод студентов
+    cout <<setw(max_stud[0]+5)<<left<<"First name";
+    cout <<setw(max_stud[1]+5)<<left<<"Last name";
+    cout <<setw(max_stud[2]+5)<<left<<"Direction";
+    cout <<setw(max_stud[3]+5)<<left<<"Grup" << '\n';
+    cout <<setfill('-')<<setw(max_stud[0]+max_stud[1]+max_stud[2]+max_stud[3]+20)<<'-'<<setfill(' ')<<'\n';
+    for(int i = 0; i < people.size(); ++i)
+    {
+        if(auto stud = dynamic_cast<student*>(people[i].get())){
+            stud->display(max_stud);} // Проходимся по массиву и выводим только студентов
+    }
+    int col_obj_stud = 0;
+    for(const auto& person: people){
+        if(auto stud = dynamic_cast<student*>(person.get())){
+            col_obj_stud = stud->get_count();
+            break;}
+    }
+    
+    cout <<setfill('-')<<setw(max_stud[0]+max_stud[1]+max_stud[2]+max_stud[3]+20)<<'-'<<setfill(' ')<<'\n';
+    cout << "Количество студентов: " << people.size()-col_prep << "\tКоличество объектов: " <<col_obj_stud<< "\n\n\n";
+    cout <<setfill('*')<<setw(max_prep[0]+max_prep[1]+max_prep[2]+max_prep[3]+max_prep[4]+15)<<'*'<<setfill(' ')<<'\n';
+
+}
+
+void baze_data(vector<student>& MStud, vector<int>& max)
+{
+    cout << "\t\t\t\tБаза данных\n";
+    cout <<setfill('*')<<setw(max[0]+max[1]+max[2]+max[3]+20)<<'*'<<setfill(' ')<<'\n';
+    cout <<setw(max[0]+5)<<left<<"First name";
+    cout <<setw(max[1]+5)<<left<<"Last name";
+    cout <<setw(max[2]+5)<<left<<"Direction";
+    cout <<setw(max[3]+5)<<left<<"Grup" << '\n';
+    cout <<setfill('-')<<setw(max[0]+max[1]+max[2]+max[3]+20)<<'-'<<setfill(' ')<<'\n';
+    for(int i = 0; i < MStud.size(); ++i)
+    {
+        MStud[i].display(max);
+    }
+    cout <<setfill('-')<<setw(max[0]+max[1]+max[2]+max[3]+20)<<'-'<<setfill(' ')<<'\n';
+    cout << "Количество студентов: " << MStud.size() << "\tКоличество объектов: " << MStud[0].get_count() << "\n\n";
+    cout <<setfill('*')<<setw(max[0]+max[1]+max[2]+max[3]+20)<<'*'<<setfill(' ')<<'\n';
+}
+
+dialog_func.cpp
+
+#include <iostream>
+#include <vector>
+#include <iomanip>
+#include <memory>
+#include <iomanip>
+#include "people.h"
+using std::left, std::setfill;
+
+void baze_data(vector<std::shared_ptr<common>>& people, vector<int>& max_stud, vector<int>& max_prep)
+{
+    cout << "\t\t\t\tБаза данных\n";
+    cout <<setfill('*')<<setw(max_prep[0]+max_prep[1]+max_prep[2]+max_prep[3]+max_prep[4]+15)<<'*'<<setfill(' ')<<'\n';
+    // Вывод преподавателей
+    cout<<"\n\nПреподаватели:\n";
+    cout<<setw(max_prep[0]+3)<<left<<"Name";
+    cout<<setw(max_prep[1]+3)<<left<<"Surname";
+    cout<<setw(max_prep[2]+3)<<left<<"Partonymic";
+    cout<<setw(max_prep[3]+3)<<left<<"Department";
+    cout<<setw(max_prep[4]+3)<<left<<"Academical course"<<'\n';
+    cout<<setfill('-')<<setw(max_prep[0]+max_prep[1]+max_prep[2]+max_prep[3]+max_prep[4]+15)<<'-'<<setfill(' ')<<'\n';
+    int col_prep = 0; // Счетчик преподавателей
+    for(int i = 0; i < people.size(); ++i)
+    {
+        if(auto teach = dynamic_cast<teacher*>(people[i].get())){
+            ++col_prep;
+            teach->display(max_prep);} // Проходимся по массиву и выводим только преподавателей
+    }
+    cout <<setfill('-')<<setw(max_prep[0]+max_prep[1]+max_prep[2]+max_prep[3]+max_prep[4]+15)<<'-'<<setfill(' ')<<'\n';
+    cout << "Количество преподавателей: " << col_prep << "\n\n\n";
+
+    // Вывод студентов
+    cout <<setw(max_stud[0]+5)<<left<<"First name";
+    cout <<setw(max_stud[1]+5)<<left<<"Last name";
+    cout <<setw(max_stud[2]+5)<<left<<"Direction";
+    cout <<setw(max_stud[3]+5)<<left<<"Grup" << '\n';
+    cout <<setfill('-')<<setw(max_stud[0]+max_stud[1]+max_stud[2]+max_stud[3]+20)<<'-'<<setfill(' ')<<'\n';
+    for(int i = 0; i < people.size(); ++i)
+    {
+        if(auto stud = dynamic_cast<student*>(people[i].get())){
+            stud->display(max_stud);} // Проходимся по массиву и выводим только студентов
+    }
+    int col_obj_stud = 0;
+    for(const auto& person: people){
+        if(auto stud = dynamic_cast<student*>(person.get())){
+            col_obj_stud = stud->get_count();
+            break;}
+    }
+    
+    cout <<setfill('-')<<setw(max_stud[0]+max_stud[1]+max_stud[2]+max_stud[3]+20)<<'-'<<setfill(' ')<<'\n';
+    cout << "Количество студентов: " << people.size()-col_prep << "\tКоличество объектов: " <<col_obj_stud<< "\n\n\n";
+    cout <<setfill('*')<<setw(max_prep[0]+max_prep[1]+max_prep[2]+max_prep[3]+max_prep[4]+15)<<'*'<<setfill(' ')<<'\n';
+
+}
+
+void baze_data(vector<student>& MStud, vector<int>& max)
+{
+    cout << "\t\t\t\tБаза данных\n";
+    cout <<setfill('*')<<setw(max[0]+max[1]+max[2]+max[3]+20)<<'*'<<setfill(' ')<<'\n';
+    cout <<setw(max[0]+5)<<left<<"First name";
+    cout <<setw(max[1]+5)<<left<<"Last name";
+    cout <<setw(max[2]+5)<<left<<"Direction";
+    cout <<setw(max[3]+5)<<left<<"Grup" << '\n';
+    cout <<setfill('-')<<setw(max[0]+max[1]+max[2]+max[3]+20)<<'-'<<setfill(' ')<<'\n';
+    for(int i = 0; i < MStud.size(); ++i)
+    {
+        MStud[i].display(max);
+    }
+    cout <<setfill('-')<<setw(max[0]+max[1]+max[2]+max[3]+20)<<'-'<<setfill(' ')<<'\n';
+    cout << "Количество студентов: " << MStud.size() << "\tКоличество объектов: " << MStud[0].get_count() << "\n\n";
+    cout <<setfill('*')<<setw(max[0]+max[1]+max[2]+max[3]+20)<<'*'<<setfill(' ')<<'\n';
+}
+
+exceptions.cpp
+
+#include "stdfax.h"
+#include "people.h"
+#include "Error.h"
+#include <limits>
+#include <cctype>
+
+void cin_int(int& a,const int& min,const int& max){
+    while (true) {
+        try {
+            string input;
+            getline(cin, input);
+
+            size_t pos;
+            long long tmp = std::stoll(input, &pos); // pos - показывает сколько символов считалось
+            
+            /* Если количество считанных символов не равно размеру введенной строки,
+                то там был мусор такую ситуацию надо обработать */
+            if (pos != input.length()) { 
+                throw Error("Некорректный ввод (лишние символы)");
+            }
+            if ( tmp < min || tmp >max) {
+                throw Error("Введена неправильная цифра!");
+            }
+            if (tmp > std::numeric_limits<int>::max()) {
+                throw Error("Переполнение: число слишком большое для int");
+            }
+
+            a = tmp; // Неявное преобразование. Мы точно знаем, что тут не будет UB
+            break;
+        }
+        // Первые два исключения выбрасывает stoll
+        catch (const std::invalid_argument&) {
+            cout << "Ошибка: введено не число\n";
+            cout << "Повторите ввод: ";}
+        catch (const std::out_of_range&) {
+            cout << "Ошибка: число выходит за пределы int\n";
+            cout << "Повторите ввод: ";}
+        catch (Error& e) {
+            cout << "Ошибка: " << e.what() << '\n';
+            cout << "Повторите ввод: ";}
+        catch (std::exception& e){
+            cout << "Ошибка: " << e.what() << '\n';
+            cout << "Повторите ввод: ";}
+    }
+}
+
+bool is_alphanumeric_string(const string& str) {
+  for (size_t i=0; i<str.size();++i) {
+        int a = static_cast<int>(static_cast<unsigned char>(str[i]));
+        // Для utf-8 только у русских символов и только в бервом байте встречается число 208 либо с 209.
+        // Из этого факта напрямую следует, что если нам в строке встретилось одно из этих чисел, то
+        // это обязательно начало русского символа, а мы такое осуждаем. Сразу после обнаружения мы 
+        // обрабатывем некорректный ввод
+        if(a == 208 || a == 209){   
+            throw Error("Вы ввели кирилицу! Непозволительная роскошь!");
+            return false;
+        }
+        if (!std::isalnum(str[i])) {
+        return false;
+        }
+    }
+  return true;
+}
+
+void set_param(string& field, istream& stream)
+{
+    while(true){
+        try{
+            getline(stream, field);
+            if(!is_alphanumeric_string(field))
+            {throw Error("В ведённой строке присутствуют символы кроме цифр и букв!\n");}
+            break;
+        }
+        catch(std::length_error&){cout << "Вы ввели слишком много символов! Поле переполнено!\n";
+            cout << "Повторите ввод: ";}
+        catch(Error& e){cout << "Ошибка: "<< e.what()<<'\n';
+            cout << "Повторите ввод: ";}
+    }
+}
+
+void read_int(int& a, istream& stream)
+{
+while (true) {
+        try {
+            string input;
+            getline(cin, input);
+
+            size_t pos;
+            long long tmp = std::stoll(input, &pos); // pos - показывает сколько символов считалось
+            
+            /* Если количество считанных символов не равно размеру введенной строки,
+               то там был мусор такую ситуацию надо обработать */
+            if (pos != input.length()) { 
+                throw Error("Некорректный ввод (лишние символы)");
+            }
+            if (tmp < 0) {
+                throw Error("Номер группы не может быть меньше нуля");
+            }
+            if (tmp > std::numeric_limits<int>::max()) {
+                throw Error("Переполнение: число слишком большое для int");
+            }
+
+            a = tmp; // Неявное преобразование. Мы точно знаем, что тут не будет UB
+            break;
+        }
+        // Первые два исключения выбрасывает stoll
+        catch (const std::invalid_argument&) {
+            cout << "Ошибка: введено не число\n";
+            cout << "Повторите ввод: ";}
+        catch (const std::out_of_range&) {
+            cout << "Ошибка: число выходит за пределы int\n";
+            cout << "Повторите ввод: ";}
+        catch (Error& e) {
+            cout << "Ошибка: " << e.what() << '\n';
+            cout << "Повторите ввод: ";}
+        catch (std::exception& e){
+            cout << "Ошибка: " << e.what() << '\n';
+            cout << "Повторите ввод: ";}
+    }
+}
+
+void open_file(ifstream& file, const string& student_file){
+    file.exceptions(std::ifstream::failbit | std::ifstream::badbit); // Включаем автоматические исключения
+    file.open(student_file, std::ios::in);
+}
+
+void cin_col_people(int& col_people)
+{
+    while (true) {
+        try {
+            string str;
+            getline(cin, str);
+
+            size_t pos;
+            long long tmp = std::stoll(str, &pos); // pos - показывает сколько символов считалось
+            
+            /* Если количество считанных символов не равно размеру введенной строки,
+               то там был мусор такую ситуацию надо обработать */
+            if (pos != str.length()) { 
+                throw Error("Некорректный ввод (лишние символы)");
+            }
+            if (tmp < 0) {
+                throw Error("Число людей не может быть меньше нуля");
+            }
+            if (tmp > std::numeric_limits<int>::max()) {
+                throw Error("Переполнение: число слишком большое для int");
+            }
+
+            col_people = tmp; // Неявное преобразование. Мы точно знаем, что тут не будет UB
+            break;
+        }
+        // Первые два исключения выбрасывает stoll
+        catch (const std::invalid_argument&) {
+            cout << "Ошибка: введено не число\n";
+            cout << "Повторите ввод: ";}
+        catch (const std::out_of_range&) {
+            cout << "Ошибка: число выходит за пределы int\n";
+            cout << "Повторите ввод: ";}
+        catch (Error& e) {
+            cout << "Ошибка: " << e.what() << '\n';
+            cout << "Повторите ввод: ";}
+        catch (std::exception& e){
+            cout << "Ошибка: " << e.what() << '\n';
+            cout << "Повторите ввод: ";}
+    }
+}
+
+// Выбираем кого добавляем в people и используем нужный конструктор
+void add_people(vector<shared_ptr<common>>& people, unordered_map<string, vector<int>>& grupsMap, vector<int>& numbers_grup , vector<string>& directions, vector<int>& max_stud, vector<int>& max_prep)
+{   cout << "Выберите кого вы хотите добавить: " << "\n1 - Студент, 2 - Преподаватель\n";
+    int student_or_prep = 0;
+    cin_int(student_or_prep, 1,2);
+    switch (student_or_prep)
+    {
+        case 1:
+        /*  С помощью make_shared выделяем память под студента и возвращаем shared_ptr 
+            указывающий на наш объект. Можно использовать если нет пользовательского деструктора  */
+        people.emplace_back(/*make_shared<student>*/new student(grupsMap,numbers_grup, directions, max_stud)); 
+        break;
+    
+    case 2:
+        people.emplace_back(make_shared<teacher>(max_prep));
+        break;
+
+    default:
+        break;
+    }
+}
+
+find_people.cpp
+
+#include "stdfax.h"
+#include "people.h"
+#include "exceptions.h"
+#include "function.h"
+
+using std::vector, std::shared_ptr;
+
+string enum_to_string(Department dep);
+
+/// @brief Функция поиска человека по базе данных. Для поиска человека нужно ввести с клавиатуры необходимые параметры
+///        - имя и фамилию искомого индивида
+/// @param people Массив по которому производится поиск
+/// @param max_stud Параметр для табличного вывода результатов(максимальная длинна поля у студента)
+/// @param max_prep Параметр для табличного вывода результатов(максимальная длинна поля у преподавателя)
+void find_people(const vector<shared_ptr<common>>& people, vector<int>& max_stud, vector<int>& max_prep) {
+    vector<shared_ptr<common>> results; // Вектор динамическая структура данных
+
+    // Ввод параметров поиска
+    string Name;
+    string Surname;
+    cout << "Введите имя: ";
+    set_param(Name, cin);
+    cout << '\n';
+    cout << "Введите фамилию: ";
+    set_param(Surname, cin);
+    // Поиск
+    for (const auto& person : people) {
+        // Для студентов
+        if (auto stud = dynamic_cast<student*>(person.get())) {
+            if (!stud->get_name().compare(Name) && !stud->get_surname().compare(Surname)) {
+                student a = *stud; // Попросили через перегруженный оператор присваивания
+                results.push_back(make_shared<student>(a));
+            }
+        }
+        // Для преподавателей
+        else if (auto teach = dynamic_cast<teacher*>(person.get())) {
+            if (!teach->get_name().compare(Name) && !teach->get_surname().compare(Surname)) {
+                teacher a = *teach;
+                results.push_back(make_shared<teacher>(a));
+            }
+        }
+    }
+    if(results.size() > 0){
+        cout << "результат поиска: \n";
+        baze_data(results, max_stud, max_prep);}
+    else{cout << "Упс! По введённым параметрам ничего не найдено ;)\n";}
+}
+
+find_stud_num_grup.cpp
+
+#include <iostream>
+#include "stdfax.h"
+#include "exceptions.h"
+#include "people.h"
+using std::left, std::right;
+
+void baze_data(vector<student>& MStud, vector<int>& max);
+
+void find_stud_num_grup(vector<std::shared_ptr<common>>& people, vector<int>& number_grup, vector<int>& max_stud){
+    string str = "Номера групп: ";
+    cout <<setw(25)<<left<< str;
+    for (int a : number_grup) {
+        cout <<setw(max_stud[3]+5)<<left<< a;
+    }
+    cout << "\n";
+
+    cout <<setw(2+10+7)<<right<<"Цифра: ";
+    for (int i = 0; i < number_grup.size(); i++)
+    {
+        cout <<setw(max_stud[3]+5)<<left<< i+1;
+    }
+    cout << "\n\n";
+
+    cout << "Ввод продолжается до того момента пока вы не введете соответствующую цифру, указанную на экране:\n";
+    int i_grup; // index grup
+    cin_int(i_grup,1,number_grup.size());
+    cout << "\n\n";
+
+    vector<student> stud_with_correct_index;
+
+    for(int i=0; i < people.size();++i)
+    {if (auto stud = dynamic_cast<student*>(people[i].get())) {  // stud != nullptr → приведение успешно
+        if(stud->get_grup() == number_grup[i_grup-1]){stud_with_correct_index.emplace_back(*stud);}
+    }}
+    cout << "Массив студентов с номером группы "<< number_grup[i_grup-1]<<":\n";
+    baze_data(stud_with_correct_index, max_stud);
+}
+
+find_stud_to_grup.cpp
+
+#include <iostream>
+#include "exceptions.h"
+#include "stdfax.h"
+#include "people.h"
+using std::right;
+
+void baze_data(vector<student>& MStud, vector<int>& max);
+
+void find_stud_to_grup(vector<std::shared_ptr<common>>& people, vector<student>& RStud, unordered_map<string,vector<int>>& grupsMap, vector<int>& numbers_grup, vector<int>& max_stud)
+{
+    if(RStud.empty()){RStud.clear();}
+    // Выбор направления
+    string str = "Выберите направление: ";
+    cout <<setw(size(str))<<left<< str;
+    for (auto it : grupsMap) {
+        cout <<setw(max_stud[2]+5)<<left<< it.first;
+    }
+    cout << "\n";
+
+    string str1 = "Цифра: ";
+    cout <<setw(size(str1) + (size(str)- size(str1))/2 + 1)<<right<<"Цифра: ";
+    for (int i = 0; i < grupsMap.size(); i++)
+    {
+        cout <<setw(max_stud[2]+5)<<left<< i+1;
+    }
+    cout << "\n\n";
+
+    cout << "Ввод продолжается до того момента пока вы не введете соответствующую цифру, указанную на экране:\n";
+    int index_direction;
+    cin_int(index_direction,1,grupsMap.size());
+    cout << "\n\n";
+
+    // Выбор группы
+    auto it = grupsMap.begin();
+    advance(it, index_direction-1);
+    str = it->first; // Нужно, чтобы потом красивый вывод оформить
+    cout << "Группы соответствующие " << it->first <<": ";
+    for(int value : it->second){cout << setw(max_stud[3]+5)<<left<<value;}
+    cout << "\n";
+
+    cout <<setw(size(str1) + 18 + size(str))<<right<<"Цифра: ";
+    for (int i = 0; i < it->second.size(); i++)
+    {
+        cout <<setw(max_stud[2]+5)<<left<< i+1;
+    }
+    cout << "\n\n";
+
+    cout << "Ввод продолжается до того момента пока вы не введете соответствующую цифру, указанную на экране:\n";
+    int index_grup;
+    cin_int(index_grup,1,it->second.size());
+
+    for(int i=0; i < people.size();++i)
+    {
+        if(auto stud = dynamic_cast<student*>(people[i].get()))
+        {        
+            if(stud->get_direction() == it->first && stud->get_grup() == it->second[index_grup-1])
+            {
+                RStud.emplace_back();
+                int j = RStud.size()-1;
+                RStud[j] = *stud;
+            }}}
+    cout << "\n\nRStud:\n";
+    baze_data(RStud, max_stud);
+    cout << "\n\n";
+}
+
+read_of_file.cpp
+
+#include <sstream>
+#include "people.h"
+#include "stdfax.h"
+using std::stringstream;
+
+vector<string> Split_line(const string& line, char delimeter)
+{
+    stringstream ss(line);
+    vector<string> tokens;
+    string token;
+
+    while(getline(ss,token,delimeter)){tokens.push_back(token);}
+    return tokens;
+}
+
+void read_people(vector<shared_ptr<common>>& people, vector<string>& tokens, unordered_map<string, vector<int>>& grupsMap, vector<int>& num_grup , vector<string>& directions);
+
+void read_of_file(ifstream& file,vector<shared_ptr<common>>& people, unordered_map<string, vector<int>>& grupsMap, vector<int>& num_grup , vector<string>& directions, vector<int>& max_stud, vector<int>& max_prep)
+{
+    string line;
+    int col_stud=0;
+    int col_prep=0;
+
+    while(getline(file,line))
+    {
+      vector<string> tokens = Split_line(line, ',');
+      if (people.capacity()==0)
+        {
+            col_stud = stoi(tokens[0]);
+            col_prep = stoi(tokens[1]);
+            people.reserve(col_prep+col_stud);
+            max_stud[0]=stoi(tokens[2]);
+            max_stud[1]=stoi(tokens[3]);
+            max_stud[2]=stoi(tokens[4]);
+            max_stud[3]=stoi(tokens[5]);
+            max_prep[0]=stoi(tokens[6]);
+            max_prep[1]=stoi(tokens[7]);
+            max_prep[2]=stoi(tokens[8]);
+            max_prep[3]=stoi(tokens[9]);
+            max_prep[4]=stoi(tokens[10]);
+        }
+        else{read_people(people,tokens,grupsMap,num_grup,directions);}
+    }
+}
+
+void read_people(vector<shared_ptr<common>>& people, vector<string>& tokens, unordered_map<string, vector<int>>& grupsMap, vector<int>& num_grup , vector<string>& directions)
+{
+    switch (stoi(tokens[0]))
+    {
+    case 1:
+        /*  С помощью make_shared выделяем память под студента и возвращаем shared_ptr 
+            указывающий на наш объект. Можно использовать если нет пользовательского деструктора  */
+        people.emplace_back(make_shared<student>(grupsMap, tokens, num_grup, directions)); 
+        break;
+    
+    case 2:
+        people.emplace_back(make_shared<teacher>(tokens));
+        break;
+
+    default:
+        break;
+    }}
+
+sort_fam.cpp
+
+#include <iostream>
+#include "stdfax.h"
+#include "people.h"
+
+void sort_fam(vector<shared_ptr<common>>& people)
+{
+    int col = 0;
+    shared_ptr<common> a;
+    do
+    {
+        col = 0;
+        for(int i=0; i<people.size()-1;++i)
+        {
+            if(people[i]->get_surname() > people[i+1]->get_surname())
+            {a = people[i];
+            people[i] = people[i+1]; // Меняем местами больший и меньший элемент
+            people[i+1] = a;
+            ++col;}
+        }
+    }
+    while(col!=0);
+}
+
+write_file.cpp
+
+#include "stdfax.h"
+#include "Error.h"
+#include "exceptions.h"
+#include "people.h"
+
+void read_int(int& a, istream& stream);
+
+void write_file(vector<std::shared_ptr<common>>& people, vector<int>& max_stud, vector<int>& max_prep)
+{
+    int write_enable = 0;
+    cout << "Записать данные в фаил?\n\n";
+    cout << setw(6)<<left << "Yes"<<setw(6)<<left <<"No"<<"\n";
+    cout <<setw(6)<<left<<"1"<<setw(6)<<left<<"0"<<"\n\n";
+    cin_int(write_enable, 0,1);
+
+    if(write_enable){
+        try{
+            fstream file;
+            file.open("file.txt", std::ios::out);
+            if(!file.is_open())
+            {
+                throw Error("Файл не открылся!");
+            }
+            int col_stud=0;
+            for(const auto pip: people)
+            {
+                if(pip->is_student())
+                {
+                    ++col_stud;
+                }
+            }
+
+            file << col_stud << ','<<people.size()-col_stud<<',';
+            for(int i = 0; i < max_stud.size(); ++i) // Максимумы студентов
+            {
+                file << max_stud[i] << ",";
+            }
+            for(int i = 0; i < max_prep.size(); ++i) // Максимумы преподавателей
+            {
+                file << max_prep[i] << ",";
+            }
+            file << "\n";  // Мы записали первую строчку. В ней хранятся данные о количестве студентов и ширине столбцов
+            for(const auto pip: people)
+            {
+                if(auto stud = dynamic_cast<student*>(pip.get()))
+                {file <<'1'<< ","<< stud->get_name() << "," << stud->get_surname() << "," << stud->get_direction() << "," << stud->get_grup() << '\n';}
+                else{auto prep = dynamic_cast<teacher*>(pip.get());
+                file <<'2'<< ","<< prep->get_name() << "," << prep->get_surname() << "," << prep->get_patronymic() << "," << prep->get_department() << "," << prep->get_academical_course() <<'\n';
+                }
+            }
+            file.close();}
+        catch(Error& e){cout << "Ошибка: "<< e.what()<<'\n';}
+    }
+}
+
+common.h
+
+#pragma once
+#include <iostream>
+#include <cstring>
+#include <vector>
+
+class common 
+{
+    public:
+        virtual void display(std::vector<int>&) const = 0; // Виртуальный метод для отображения информации
+        virtual std::string get_surname() const = 0;
+        virtual common& operator=(const common& other){return *this;}
+        virtual bool is_student() const{return false;}
+        virtual int get_grup() const{return -1;}
+        common(){
+            //std::cout << "Конструктор по умолчанию базового класса\n";
+        }
+        virtual ~common()=default;
+};
+
+Error.h
+
+#include "stdfax.h"
+
+class Error:public std::exception
+{
+private:
+    string str;
+public:
+    string get_str()const{return str;}
+    
+    Error(string err):str(err){};
+    
+    Error& operator=(const Error& a){
+        str = a.get_str();
+        return *this;}
+
+    const char* what() const noexcept override {return str.c_str();}
+};
+
+exceptions.h
+
+#include "stdfax.h"
+#include <limits>
+#include <cctype>
+
+/// @brief Определяет присутствует в строчке что-то кроме цифр и букв
+/// @param str исследуемая строка
+/// @return true - строка только из цифр и букв, false - в противном случае 
+bool is_alphanumeric_string(const string& str);
+
+/// @brief Функция ввода поля класса с клавиатуры
+/// @param field Поле класса, которое мы собираемся ввести с клавиатуры
+/// @param stream Входящий поток ввода cin
+void set_param(string& field, istream& stream);
+
+/// @brief Функция ввода параметра номера группы
+/// @param a Номер группы (int)
+/// @param stream Входной поток ввода cin
+void read_int(int& a, istream& stream);
+
+/// @brief Функция открывающая файл
+void open_file(ifstream& file, const string& student_file);
+
+/// @brief Функция ввода количества людей в случае когда размер файла равен 0
+/// @param col_people 
+void cin_col_people(int& col_people);
+
+/// @brief Функция ввода числа
+/// @param a Поле, в которое мы ходим ввести число
+/// @param min Минимальное допустимое значение для параметра "а"
+/// @param max Максимальное допустимое значение для параметра "а"
+void cin_int(int& a,const int& min,const int& max);
+
+fio.h
+
+#pragma once
+#include "stdfax.h"
+#include "man.h"
+
+class teacher;
+
+class fio:public man
+{
+    private:
+        std::string patronymic;
+    public: 
+        friend std::ostream& operator<<(std::ostream& stream, const fio& teach);
+        fio& operator=(const fio& other);
+        std::string get_name(){return name;}
+        void display(std::vector<int>& max_prep) const;
+        fio(std::vector<int>& max_prep);
+        fio(std::vector<std::string>& tokens);
+        fio();
+        ~fio()override{}
+    friend teacher;
+};
+
+function.h
+
+#pragma once
+
+#include <vector>
+#include <memory>
+#include <unordered_map>
+#include <fstream>
+#include "people.h" 
+
+void add_people(
+    vector<shared_ptr<common>>& people, 
+    unordered_map<string, 
+    vector<int>>& grupsMap, 
+    vector<int>& numbers_grup , 
+    vector<string>& directions, 
+    vector<int>& max_stud, 
+    vector<int>& max_prep);
+
+void read_of_file(
+    ifstream& file,
+    vector<shared_ptr<common>>& people, 
+    unordered_map<string, 
+    vector<int>>& grupsMap, 
+    vector<int>& numbers_grup , 
+    vector<string>& directions, 
+    vector<int>& max_stud, 
+    vector<int>& max_prep);
+
+void baze_data(
+    vector<std::shared_ptr<common>>& people, 
+    vector<int>& max_stud, 
+    vector<int>& max_prep);
+
+void find_stud_num_grup(
+    vector<std::shared_ptr<common>>& people, 
+    vector<int>& number_grup, 
+    vector<int>& max_stud);
+    
+void find_stud_to_grup(
+    vector<std::shared_ptr<common>>& people, 
+    vector<student>& RStud, 
+    unordered_map<string,vector<int>>& grupsMap, 
+    vector<int>& number_grup, 
+    vector<int>& max_stud);
+
+void sort_fam(vector<shared_ptr<common>>& people);
+
+void dialog_func();
+
+void write_file(
+    vector<std::shared_ptr<common>>& people, 
+    vector<int>& max_stud, 
+    vector<int>& max_prep);
+
+void find_people(
+    const vector<shared_ptr<common>>& people,
+     vector<int>& max_stud,
+     vector<int>& max_prep);
+
+man.h
+
+#pragma once
+#include "stdfax.h"
+#include <limits>
+#include <iomanip>
+
+class student;
+
+class man
+{
+    protected:
+        std::string name;
+        std::string surname;
+    public:
+        
+        // Перегруженные операторы
+        friend std::ostream& operator<<(std::ostream& stream, const man& teach);
+        man& operator=(const man& other);
+        
+        // Методы класса
+        virtual void display(std::vector<int>& max) const;
+
+        // Конструкторы класса
+        man(std::vector<int>& max);
+        man(std::vector<std::string>& tokens): name(tokens[1]), surname(tokens[2]){}
+        man();
+        virtual ~man()=default;
+    friend student;
+};
+
+people.h
+
+#pragma once
+#include "common.h"
+#include "man.h"
+#include "fio.h"
+#include "student.h"
+#include "teacher.h"
+
+stdfax.h
+
+#pragma once
+#include <iostream>
+#include <iomanip>
+#include <fstream>
+#include <cstring>
+#include <memory>
+#include <unordered_map>
+#include <vector>
+
+using std::string, std::fstream, std::ifstream, std::cout, std::istream, std::streamsize;
+using std::cin, std::vector, std::shared_ptr, std::unordered_map, std::make_shared, std::setw;
+using std::left;
+
+
+student.h
+
+#pragma once
+#include "stdfax.h"
+#include "man.h"
+#include "common.h"
+
+class student:public common
+{
+    private:
+        man Man;
+        std::string direction;
+        int grup;
+        static int count;
+    public:
+
+        // Перегруженные операторы
+        friend std::ostream& operator<<(std::ostream& stream, const student& stud);
+        student& operator=(const student& other);
+
+
+        // Методы класса
+        int get_count() const{return count;}
+        std::string get_name() const{return Man.name;}
+        std::string get_surname() const{return Man.surname;}
+        std::string get_direction() const{return direction;}
+        bool is_student() const{return true;}
+        int get_grup() const{return grup;}
+        void display(std::vector<int>& max_stud) const override;
+
+        // Конструкторы класса
+        student(std::unordered_map<std::string, std::vector<int>>& grupsMap, std::vector<std::string>& tokens, std::vector <int>& numbers_grup, std::vector<std::string>& directions);
+        student(std::unordered_map<std::string, std::vector<int>>& grupsMap, std::vector<int>& numbers_grup, std::vector<std::string>& directions, std::vector<int>& max_stud);
+        student(const student& stud);
+        student();
+        ~student(){--count;}
+};
+
+teacher.h
+
+#pragma once
+#include "stdfax.h"
+#include "fio.h"
+#include "common.h"
+
+/*
+Инициализируем значение первого элемента нулем. Нужно для совместимости с индексацией
+по массиву value_department(ф-я main)  */
+enum Department{VM_1=0, IB, MIUP, TKS, AMF};
+
+class teacher:public common
+{
+    private:
+        fio prep;
+        Department department;
+        std::string academical_course;
+    public:
+
+        // Перегруженные операторы
+        void display(std::vector<int>& max_prep) const override;
+        friend std::ostream& operator<<(std::ostream& stream, const teacher& teach);
+        teacher& operator=(const teacher& other);
+
+        // Методы класса
+        std::string get_name(){return prep.name;}
+        std::string get_surname()const override{return prep.surname;}
+        std::string get_patronymic(){return prep.patronymic;}
+        int get_department();
+        std::string get_academical_course();
+        std::string get_department_string();
+        void initialization_enum(std::vector<int>&max_prep);
+
+        // Конструкторы класса
+        teacher(std::vector<std::string>& tokens);
+        teacher(std::vector<int>& max_prep);
+        teacher();
+};
+
+что может значить "Создать функции для данного варианта с использованием STL:"? Насколько приведенная реализация подходит под требования?
+Что можно было бы добавить или изменить реализацию, чтобы она стала ближе к "STL"? Не нужно писать код конкретной реализации. От тебя требуется 
+только описать что подходит, а что нет, что можно убрать, что можно добавить и обосновать каждое действие(почему стоить что-то сделать так, а не иначе)

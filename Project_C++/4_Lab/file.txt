@@ -1,0 +1,12 @@
+5,6,10,10,20,10,10,11,10,10,30,
+2,Mason,Anderson,David,4,Artificial Intelligence
+2,William,Brown,Robert,2,Data Structures and Algorithms
+2,Jhon,Clap,Bruh,0,Microprocessor System
+1,Liam,Davis,Biology,209
+2,Sophia,Garcia,Maria,1,Database Systems
+1,Noah,Johnson,Mathematics,312
+1,Olivia,Martinez,Physics,104
+2,Benjamin,Miller,James,0,Machine Learning Fundamentals
+2,Isabella,Rodriguez,Sophia,3,Operating Systems
+1,Emma,Thompson,Electrical Engineering,207
+1,James,Wilson,Computer Science,115

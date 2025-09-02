@@ -1,0 +1,180 @@
+0 mwdInit
+1 wmAddWindow
+2 wmPrtWindow
+3 wmDelWindow
+4 wmInit
+5 wmUpdWindow
+6 mwdCreateWindow
+7 mwdPushQ
+8 hwsAddMessageToScalableList
+9 mwdFixAdressWindow
+10 mwdInitInput
+11 mwdAddSysObject
+12 mwdDelSysObject
+13 wmDelPointX
+14 wmDelPointY
+15 wmDelScreen
+16 dmb
+17 wmVisWindow
+18 mwdAttachWindow
+19 mwdDetachWindow
+20 mwdAddWindowObject
+21 mwdDelWindowObject
+22 mwdMainLoop
+23 mwdPostMessage
+24 mwdQuerySystemObjectPlace
+25 mwdQueryWindowObjectPlace
+26 mwdOpenScreen
+27 mwdWindowManager
+28 ogdFillPoly
+29 ogdFramePoly
+30 ogdBitBltWrite
+31 mwdCreateList
+32 tmCreateTimer
+33 tmDeleteTimer
+34 mwdCreateQueue
+100 mwuReadFont
+101 mwuFontHeight
+102 mwuStringWidth
+103 mwuSetFont
+104 mwuSetFontByName
+105 mwuAddInitializedLogicSystem
+106 mwuAddLogicSystem
+107 mwuAddMessagesToCommonList
+108 mwuAddScreenLogic
+109 mwuPrimitivManager
+110 mwuAddPrimitiveManager
+111 DrawMarker
+200 hwsWindowManager
+201 hwsMakeChildWindow
+202 hwsRowColumn
+203 hwsAddRowColumn
+204 hwsSetRowColumnParam
+205 hwsMakePushButton
+206 hwsSetPushButtonParam
+207 hwsMakeSwitchButton
+208 hwsBullutinBoard
+209 hwsAddBullutinBoard
+210 hwsSingleChild
+211 hwsAddSingleChild
+212 hwsAddKeyboardChild
+213 hwsEditLine
+214 hwsMakeEditLine
+215 hwsSetEditLineParam
+216 hwsFormedWindow
+217 hwsAddFormedWindow
+218 hwsSetFormedWindowParam
+219 hwsAddBorder
+220 hwsSetBorderParam
+221 hwsMakeCheckButton
+222 hwsMakeHorizScrollBar
+223 hwsMakeVertScrollBar
+224 hwsAddMenuToWindow
+225 hwsMakeIcon
+226 hwsMakePushLButton
+227 hwsMakeStaticText
+228 MHandle
+229 hwsBeginMenu
+230 hwsEndMenu
+231 hwsExtraBullutinBoard
+232 hwsAddExtraBullutinBoard
+233 hwsSetCheckButtonParam
+234 hwsSetSwitchButtonParam
+235 hwsAddButton
+236 hwsChildManager
+237 hwsStaticText
+238 hwsLoadMenu
+239 hwsInterpreteMenu
+242 hwsMakeScrollWindow
+243 hwsSetScrollWindowParam
+244 fEdtl - FIB
+245 hwsMakeScrollListWindow
+246 hwsSetScrollListParam
+247 hwsRBSendParamMessage
+248 hwsMakeScrollSwitchButton
+249 hwsLoadDialog
+250 hwsInterpreteItems
+251 hwsLoadAndOpenDialog
+252 hwsInterpreteCnt
+253 hwsAddBackground
+
+300 resLoad
+301 resGet
+302 resGetAdr
+303 resGetInfoAdr
+304 resUnPack
+305 resPack
+306 resCheckReadOnly
+307 resDelete
+308 resUpdHashTab
+309 resUpdHashStr
+
+1000 cannot allocate space for window_list
+1001 cannot realloc space for stack
+1002 cannot allocate space for table_raw
+1003 cannot allocate space for table_col
+1004 sizes of deleted window not in table
+1005 cannot find window in list
+1006 cannot allocate space for table
+1007 too many window in window list
+1008 invalid bounds of window
+1009 invalid number in window stack
+1010 queue overflow
+1011 too many messages in list
+1012 invalid window name
+1013 cannot run dummy process
+1014 too many filtrs
+1015 invalid place
+1016 cannot allocate space for window data
+1017 window not attached to WD (absent of mwdWindowManager)
+1018 absent mwdUpdFiltr
+1019 there is no filtrs in system route
+1020 invalid window name
+1021 this adapter not supported
+1022 cannot load graph driver
+1023 window is in memory
+1024 window already opened
+1025 illegal bounds of window
+1026 not enough memory
+1027 too many timers
+1028 illegal timer name
+1034 attempt to load too many resource file
+1035 cannot open resource file
+1036 invalid resource file
+1037 attempt to access to unknown resource
+1038 cannot load resource file
+1039 error while packing/unpacking (prabably corrupted data)
+1040 attempt to write to ReadOnly resource
+1041 cannot find file id for updating hash table
+1100 Too many fonts loaded
+1101 Illegal font
+1102 not enough memory
+1103 there is no manager objects
+1104 primitive not registered or invalid type of primitive
+1105 invalid buffer mode
+1106 illegal marker number
+1200 Message not supported
+1201 not enough memory
+1202 object already in way
+1203 illegal child window name
+1204 illegal parameter name
+1205 SingleChild can contain only one child
+1206 There is no child in the list
+1207 This is not child manager
+1208 No such child in this window
+1209 There is no window manager in this window
+1210 Too many hot keys
+1211 Too many menu levels
+1212 unexpected end menu
+1213 unknown dialog resource name
+1214 unknown menu font resource name
+1215 unknown menu bitmap resource name
+1216 cannot change drive
+1217 invalid item number
+1218 invalid resource class
+
+2000 error in dynamic block memory
+2001 lack of initially setted memory
+2002 lack of block names
+2003 unexistant block required
+2004 want to allocate existant block

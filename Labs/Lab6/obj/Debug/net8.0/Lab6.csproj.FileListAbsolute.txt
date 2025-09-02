@@ -1,0 +1,45 @@
+/mnt/WdHard/институт/Labs_OOP/иНститут/С#/Лабараторные работы/Lab6/obj/Debug/net8.0/Lab6.GeneratedMSBuildEditorConfig.editorconfig
+/mnt/WdHard/институт/Labs_OOP/иНститут/С#/Лабараторные работы/Lab6/obj/Debug/net8.0/Lab6.AssemblyInfoInputs.cache
+/mnt/WdHard/институт/Labs_OOP/иНститут/С#/Лабараторные работы/Lab6/obj/Debug/net8.0/Lab6.AssemblyInfo.cs
+/mnt/WdHard/институт/Labs_OOP/иНститут/С#/Лабараторные работы/Lab6/obj/Debug/net8.0/Lab6.csproj.CoreCompileInputs.cache
+/mnt/WdHard/институт/Labs_OOP/иНститут/С#/Лабараторные работы/Lab6/obj/Debug/net8.0/Lab6.sourcelink.json
+/mnt/WdHard/институт/Labs_OOP/иНститут/С#/Лабараторные работы/Lab6/bin/Debug/net8.0/Lab6
+/mnt/WdHard/институт/Labs_OOP/иНститут/С#/Лабараторные работы/Lab6/bin/Debug/net8.0/Lab6.deps.json
+/mnt/WdHard/институт/Labs_OOP/иНститут/С#/Лабараторные работы/Lab6/bin/Debug/net8.0/Lab6.runtimeconfig.json
+/mnt/WdHard/институт/Labs_OOP/иНститут/С#/Лабараторные работы/Lab6/bin/Debug/net8.0/Lab6.dll
+/mnt/WdHard/институт/Labs_OOP/иНститут/С#/Лабараторные работы/Lab6/bin/Debug/net8.0/Lab6.pdb
+/mnt/WdHard/институт/Labs_OOP/иНститут/С#/Лабараторные работы/Lab6/obj/Debug/net8.0/Lab6.dll
+/mnt/WdHard/институт/Labs_OOP/иНститут/С#/Лабараторные работы/Lab6/obj/Debug/net8.0/refint/Lab6.dll
+/mnt/WdHard/институт/Labs_OOP/иНститут/С#/Лабараторные работы/Lab6/obj/Debug/net8.0/Lab6.pdb
+/mnt/WdHard/институт/Labs_OOP/иНститут/С#/Лабараторные работы/Lab6/obj/Debug/net8.0/Lab6.genruntimeconfig.cache
+/mnt/WdHard/институт/Labs_OOP/иНститут/С#/Лабараторные работы/Lab6/obj/Debug/net8.0/ref/Lab6.dll
+/mnt/WdHard/институт/Labs_OOP/иНститут/C#/Labs/Lab6/bin/Debug/net8.0/Lab6
+/mnt/WdHard/институт/Labs_OOP/иНститут/C#/Labs/Lab6/bin/Debug/net8.0/Lab6.deps.json
+/mnt/WdHard/институт/Labs_OOP/иНститут/C#/Labs/Lab6/bin/Debug/net8.0/Lab6.runtimeconfig.json
+/mnt/WdHard/институт/Labs_OOP/иНститут/C#/Labs/Lab6/bin/Debug/net8.0/Lab6.dll
+/mnt/WdHard/институт/Labs_OOP/иНститут/C#/Labs/Lab6/bin/Debug/net8.0/Lab6.pdb
+/mnt/WdHard/институт/Labs_OOP/иНститут/C#/Labs/Lab6/obj/Debug/net8.0/Lab6.GeneratedMSBuildEditorConfig.editorconfig
+/mnt/WdHard/институт/Labs_OOP/иНститут/C#/Labs/Lab6/obj/Debug/net8.0/Lab6.AssemblyInfoInputs.cache
+/mnt/WdHard/институт/Labs_OOP/иНститут/C#/Labs/Lab6/obj/Debug/net8.0/Lab6.AssemblyInfo.cs
+/mnt/WdHard/институт/Labs_OOP/иНститут/C#/Labs/Lab6/obj/Debug/net8.0/Lab6.csproj.CoreCompileInputs.cache
+/mnt/WdHard/институт/Labs_OOP/иНститут/C#/Labs/Lab6/obj/Debug/net8.0/Lab6.sourcelink.json
+/mnt/WdHard/институт/Labs_OOP/иНститут/C#/Labs/Lab6/obj/Debug/net8.0/Lab6.dll
+/mnt/WdHard/институт/Labs_OOP/иНститут/C#/Labs/Lab6/obj/Debug/net8.0/refint/Lab6.dll
+/mnt/WdHard/институт/Labs_OOP/иНститут/C#/Labs/Lab6/obj/Debug/net8.0/Lab6.pdb
+/mnt/WdHard/институт/Labs_OOP/иНститут/C#/Labs/Lab6/obj/Debug/net8.0/Lab6.genruntimeconfig.cache
+/mnt/WdHard/институт/Labs_OOP/иНститут/C#/Labs/Lab6/obj/Debug/net8.0/ref/Lab6.dll
+/home/rat56744/Labs_OOP/иНститут/C#/Labs/Lab6/bin/Debug/net8.0/Lab6
+/home/rat56744/Labs_OOP/иНститут/C#/Labs/Lab6/bin/Debug/net8.0/Lab6.deps.json
+/home/rat56744/Labs_OOP/иНститут/C#/Labs/Lab6/bin/Debug/net8.0/Lab6.runtimeconfig.json
+/home/rat56744/Labs_OOP/иНститут/C#/Labs/Lab6/bin/Debug/net8.0/Lab6.dll
+/home/rat56744/Labs_OOP/иНститут/C#/Labs/Lab6/bin/Debug/net8.0/Lab6.pdb
+/home/rat56744/Labs_OOP/иНститут/C#/Labs/Lab6/obj/Debug/net8.0/Lab6.GeneratedMSBuildEditorConfig.editorconfig
+/home/rat56744/Labs_OOP/иНститут/C#/Labs/Lab6/obj/Debug/net8.0/Lab6.AssemblyInfoInputs.cache
+/home/rat56744/Labs_OOP/иНститут/C#/Labs/Lab6/obj/Debug/net8.0/Lab6.AssemblyInfo.cs
+/home/rat56744/Labs_OOP/иНститут/C#/Labs/Lab6/obj/Debug/net8.0/Lab6.csproj.CoreCompileInputs.cache
+/home/rat56744/Labs_OOP/иНститут/C#/Labs/Lab6/obj/Debug/net8.0/Lab6.sourcelink.json
+/home/rat56744/Labs_OOP/иНститут/C#/Labs/Lab6/obj/Debug/net8.0/Lab6.dll
+/home/rat56744/Labs_OOP/иНститут/C#/Labs/Lab6/obj/Debug/net8.0/refint/Lab6.dll
+/home/rat56744/Labs_OOP/иНститут/C#/Labs/Lab6/obj/Debug/net8.0/Lab6.pdb
+/home/rat56744/Labs_OOP/иНститут/C#/Labs/Lab6/obj/Debug/net8.0/Lab6.genruntimeconfig.cache
+/home/rat56744/Labs_OOP/иНститут/C#/Labs/Lab6/obj/Debug/net8.0/ref/Lab6.dll

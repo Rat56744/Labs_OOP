@@ -1,0 +1,45 @@
+/mnt/WdHard/институт/Labs_OOP/иНститут/С#/Лабараторные работы/Lab3/bin/Debug/net8.0/Lab3
+/mnt/WdHard/институт/Labs_OOP/иНститут/С#/Лабараторные работы/Lab3/bin/Debug/net8.0/Lab3.deps.json
+/mnt/WdHard/институт/Labs_OOP/иНститут/С#/Лабараторные работы/Lab3/bin/Debug/net8.0/Lab3.runtimeconfig.json
+/mnt/WdHard/институт/Labs_OOP/иНститут/С#/Лабараторные работы/Lab3/bin/Debug/net8.0/Lab3.dll
+/mnt/WdHard/институт/Labs_OOP/иНститут/С#/Лабараторные работы/Lab3/bin/Debug/net8.0/Lab3.pdb
+/mnt/WdHard/институт/Labs_OOP/иНститут/С#/Лабараторные работы/Lab3/obj/Debug/net8.0/Lab3.GeneratedMSBuildEditorConfig.editorconfig
+/mnt/WdHard/институт/Labs_OOP/иНститут/С#/Лабараторные работы/Lab3/obj/Debug/net8.0/Lab3.AssemblyInfoInputs.cache
+/mnt/WdHard/институт/Labs_OOP/иНститут/С#/Лабараторные работы/Lab3/obj/Debug/net8.0/Lab3.AssemblyInfo.cs
+/mnt/WdHard/институт/Labs_OOP/иНститут/С#/Лабараторные работы/Lab3/obj/Debug/net8.0/Lab3.csproj.CoreCompileInputs.cache
+/mnt/WdHard/институт/Labs_OOP/иНститут/С#/Лабараторные работы/Lab3/obj/Debug/net8.0/Lab3.sourcelink.json
+/mnt/WdHard/институт/Labs_OOP/иНститут/С#/Лабараторные работы/Lab3/obj/Debug/net8.0/Lab3.dll
+/mnt/WdHard/институт/Labs_OOP/иНститут/С#/Лабараторные работы/Lab3/obj/Debug/net8.0/refint/Lab3.dll
+/mnt/WdHard/институт/Labs_OOP/иНститут/С#/Лабараторные работы/Lab3/obj/Debug/net8.0/Lab3.pdb
+/mnt/WdHard/институт/Labs_OOP/иНститут/С#/Лабараторные работы/Lab3/obj/Debug/net8.0/Lab3.genruntimeconfig.cache
+/mnt/WdHard/институт/Labs_OOP/иНститут/С#/Лабараторные работы/Lab3/obj/Debug/net8.0/ref/Lab3.dll
+/home/rat56744/Labs_OOP/иНститут/C#/Labs/Lab3/bin/Debug/net8.0/Lab3
+/home/rat56744/Labs_OOP/иНститут/C#/Labs/Lab3/bin/Debug/net8.0/Lab3.deps.json
+/home/rat56744/Labs_OOP/иНститут/C#/Labs/Lab3/bin/Debug/net8.0/Lab3.runtimeconfig.json
+/home/rat56744/Labs_OOP/иНститут/C#/Labs/Lab3/bin/Debug/net8.0/Lab3.dll
+/home/rat56744/Labs_OOP/иНститут/C#/Labs/Lab3/bin/Debug/net8.0/Lab3.pdb
+/home/rat56744/Labs_OOP/иНститут/C#/Labs/Lab3/obj/Debug/net8.0/Lab3.GeneratedMSBuildEditorConfig.editorconfig
+/home/rat56744/Labs_OOP/иНститут/C#/Labs/Lab3/obj/Debug/net8.0/Lab3.AssemblyInfoInputs.cache
+/home/rat56744/Labs_OOP/иНститут/C#/Labs/Lab3/obj/Debug/net8.0/Lab3.AssemblyInfo.cs
+/home/rat56744/Labs_OOP/иНститут/C#/Labs/Lab3/obj/Debug/net8.0/Lab3.csproj.CoreCompileInputs.cache
+/home/rat56744/Labs_OOP/иНститут/C#/Labs/Lab3/obj/Debug/net8.0/Lab3.sourcelink.json
+/home/rat56744/Labs_OOP/иНститут/C#/Labs/Lab3/obj/Debug/net8.0/Lab3.dll
+/home/rat56744/Labs_OOP/иНститут/C#/Labs/Lab3/obj/Debug/net8.0/refint/Lab3.dll
+/home/rat56744/Labs_OOP/иНститут/C#/Labs/Lab3/obj/Debug/net8.0/Lab3.pdb
+/home/rat56744/Labs_OOP/иНститут/C#/Labs/Lab3/obj/Debug/net8.0/Lab3.genruntimeconfig.cache
+/home/rat56744/Labs_OOP/иНститут/C#/Labs/Lab3/obj/Debug/net8.0/ref/Lab3.dll
+/mnt/WdHard/институт/Labs_OOP/иНститут/C#/Labs/Lab3/bin/Debug/net8.0/Lab3
+/mnt/WdHard/институт/Labs_OOP/иНститут/C#/Labs/Lab3/bin/Debug/net8.0/Lab3.deps.json
+/mnt/WdHard/институт/Labs_OOP/иНститут/C#/Labs/Lab3/bin/Debug/net8.0/Lab3.runtimeconfig.json
+/mnt/WdHard/институт/Labs_OOP/иНститут/C#/Labs/Lab3/bin/Debug/net8.0/Lab3.dll
+/mnt/WdHard/институт/Labs_OOP/иНститут/C#/Labs/Lab3/bin/Debug/net8.0/Lab3.pdb
+/mnt/WdHard/институт/Labs_OOP/иНститут/C#/Labs/Lab3/obj/Debug/net8.0/Lab3.GeneratedMSBuildEditorConfig.editorconfig
+/mnt/WdHard/институт/Labs_OOP/иНститут/C#/Labs/Lab3/obj/Debug/net8.0/Lab3.AssemblyInfoInputs.cache
+/mnt/WdHard/институт/Labs_OOP/иНститут/C#/Labs/Lab3/obj/Debug/net8.0/Lab3.AssemblyInfo.cs
+/mnt/WdHard/институт/Labs_OOP/иНститут/C#/Labs/Lab3/obj/Debug/net8.0/Lab3.csproj.CoreCompileInputs.cache
+/mnt/WdHard/институт/Labs_OOP/иНститут/C#/Labs/Lab3/obj/Debug/net8.0/Lab3.sourcelink.json
+/mnt/WdHard/институт/Labs_OOP/иНститут/C#/Labs/Lab3/obj/Debug/net8.0/Lab3.dll
+/mnt/WdHard/институт/Labs_OOP/иНститут/C#/Labs/Lab3/obj/Debug/net8.0/refint/Lab3.dll
+/mnt/WdHard/институт/Labs_OOP/иНститут/C#/Labs/Lab3/obj/Debug/net8.0/Lab3.pdb
+/mnt/WdHard/институт/Labs_OOP/иНститут/C#/Labs/Lab3/obj/Debug/net8.0/Lab3.genruntimeconfig.cache
+/mnt/WdHard/институт/Labs_OOP/иНститут/C#/Labs/Lab3/obj/Debug/net8.0/ref/Lab3.dll

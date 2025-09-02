@@ -1,0 +1,30 @@
+/mnt/WdHard/институт/Labs_OOP/иНститут/С#/Лабараторные работы/Lab2/bin/Debug/net8.0/Lab2
+/mnt/WdHard/институт/Labs_OOP/иНститут/С#/Лабараторные работы/Lab2/bin/Debug/net8.0/Lab2.deps.json
+/mnt/WdHard/институт/Labs_OOP/иНститут/С#/Лабараторные работы/Lab2/bin/Debug/net8.0/Lab2.runtimeconfig.json
+/mnt/WdHard/институт/Labs_OOP/иНститут/С#/Лабараторные работы/Lab2/bin/Debug/net8.0/Lab2.dll
+/mnt/WdHard/институт/Labs_OOP/иНститут/С#/Лабараторные работы/Lab2/bin/Debug/net8.0/Lab2.pdb
+/mnt/WdHard/институт/Labs_OOP/иНститут/С#/Лабараторные работы/Lab2/obj/Debug/net8.0/Lab2.GeneratedMSBuildEditorConfig.editorconfig
+/mnt/WdHard/институт/Labs_OOP/иНститут/С#/Лабараторные работы/Lab2/obj/Debug/net8.0/Lab2.AssemblyInfoInputs.cache
+/mnt/WdHard/институт/Labs_OOP/иНститут/С#/Лабараторные работы/Lab2/obj/Debug/net8.0/Lab2.AssemblyInfo.cs
+/mnt/WdHard/институт/Labs_OOP/иНститут/С#/Лабараторные работы/Lab2/obj/Debug/net8.0/Lab2.csproj.CoreCompileInputs.cache
+/mnt/WdHard/институт/Labs_OOP/иНститут/С#/Лабараторные работы/Lab2/obj/Debug/net8.0/Lab2.sourcelink.json
+/mnt/WdHard/институт/Labs_OOP/иНститут/С#/Лабараторные работы/Lab2/obj/Debug/net8.0/Lab2.dll
+/mnt/WdHard/институт/Labs_OOP/иНститут/С#/Лабараторные работы/Lab2/obj/Debug/net8.0/refint/Lab2.dll
+/mnt/WdHard/институт/Labs_OOP/иНститут/С#/Лабараторные работы/Lab2/obj/Debug/net8.0/Lab2.pdb
+/mnt/WdHard/институт/Labs_OOP/иНститут/С#/Лабараторные работы/Lab2/obj/Debug/net8.0/Lab2.genruntimeconfig.cache
+/mnt/WdHard/институт/Labs_OOP/иНститут/С#/Лабараторные работы/Lab2/obj/Debug/net8.0/ref/Lab2.dll
+/home/rat56744/Labs_OOP/иНститут/C#/Labs/Lab2/bin/Debug/net8.0/Lab2
+/home/rat56744/Labs_OOP/иНститут/C#/Labs/Lab2/bin/Debug/net8.0/Lab2.deps.json
+/home/rat56744/Labs_OOP/иНститут/C#/Labs/Lab2/bin/Debug/net8.0/Lab2.runtimeconfig.json
+/home/rat56744/Labs_OOP/иНститут/C#/Labs/Lab2/bin/Debug/net8.0/Lab2.dll
+/home/rat56744/Labs_OOP/иНститут/C#/Labs/Lab2/bin/Debug/net8.0/Lab2.pdb
+/home/rat56744/Labs_OOP/иНститут/C#/Labs/Lab2/obj/Debug/net8.0/Lab2.GeneratedMSBuildEditorConfig.editorconfig
+/home/rat56744/Labs_OOP/иНститут/C#/Labs/Lab2/obj/Debug/net8.0/Lab2.AssemblyInfoInputs.cache
+/home/rat56744/Labs_OOP/иНститут/C#/Labs/Lab2/obj/Debug/net8.0/Lab2.AssemblyInfo.cs
+/home/rat56744/Labs_OOP/иНститут/C#/Labs/Lab2/obj/Debug/net8.0/Lab2.csproj.CoreCompileInputs.cache
+/home/rat56744/Labs_OOP/иНститут/C#/Labs/Lab2/obj/Debug/net8.0/Lab2.sourcelink.json
+/home/rat56744/Labs_OOP/иНститут/C#/Labs/Lab2/obj/Debug/net8.0/Lab2.dll
+/home/rat56744/Labs_OOP/иНститут/C#/Labs/Lab2/obj/Debug/net8.0/refint/Lab2.dll
+/home/rat56744/Labs_OOP/иНститут/C#/Labs/Lab2/obj/Debug/net8.0/Lab2.pdb
+/home/rat56744/Labs_OOP/иНститут/C#/Labs/Lab2/obj/Debug/net8.0/Lab2.genruntimeconfig.cache
+/home/rat56744/Labs_OOP/иНститут/C#/Labs/Lab2/obj/Debug/net8.0/ref/Lab2.dll
