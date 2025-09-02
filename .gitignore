@@ -1,0 +1,36 @@
+# Virtual environments
+env/
+.venv/
+venv/
+
+# IDE
+.vscode/
+.vs/
+.idea/
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Logs and databases
+*.log
+*.sqlite
+*.sqlite3
+
+# Large data files
+*.csv
+*.json
+*.h5
+*.pkl
+
+# Archives
+*.zip
+*.rar
